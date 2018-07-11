@@ -1,0 +1,11 @@
+SELECT 
+m.routine_catalog as banco,
+m.routine_schema as divisao,
+m.Specific_Name as nome,
+m.routine_type as Tipo
+FROM 
+INFORMATION_SCHEMA.ROUTINES m
+order by 
+m.routine_type,
+m.routine_schema,
+m.Specific_Name
