@@ -14,7 +14,7 @@
 <br>
 <b><br>&emsp;Contatos: <br>
   &emsp;e-mail:</b> <i>marcioferreira_junior@hotmail.com</i>
-<br><b>Siga-me no LinkedIn: <a href="https://www.linkedin.com/in/marciofjr/"> @ M a r c i o F j r </a> </b>
+<br><b>&emsp;Siga-me no LinkedIn: <a href="https://www.linkedin.com/in/marciofjr/"> @ M a r c i o F j r </a> </b>
 <br>.
 <br>.
 <br>.
