@@ -1,0 +1,38 @@
+Select 
+DB_NAME() as banco,
+m.table_schema as div_tabela,
+m.tableName as nome_tabela,
+m.ColumnID as id_campo,
+m.ColumnName as campo_tabela,
+m.table_type as tipo_tabela
+from(
+Select 
+a.table_schema,
+st.name As TableName, 
+sc.column_id As ColumnID,
+sc.name As ColumnName,
+a.table_type
+from sys.tables st 
+Inner Join sys.columns sc
+on st.object_id = sc.object_id
+Inner Join sys.systypes sty
+on sc.system_type_id = sty.xtype
+inner join information_schema.tables a
+on a.table_name = st.name
+UNION ALL
+Select 
+a.table_schema,
+st.name As TableName, 
+sc.column_id As ColumnID,
+sc.name As ColumnName,
+a.table_type
+from sys.views st 
+Inner Join sys.columns sc
+on st.object_id = sc.object_id
+Inner Join sys.systypes sty
+on sc.system_type_id = sty.xtype
+inner join information_schema.tables a
+on a.table_name = st.name
+) m
+group by m.table_schema, m.TableName, m.ColumnID, m.ColumnName, m.table_type
+Order By m.table_schema, m.tableName, m.ColumnID
